@@ -1,0 +1,54 @@
+.list-group-item{
+    background-color: #0df0d6;
+}
+
+.card{
+    margin-top: 5%;
+    height: 500px;
+    width: 90%;
+}
+
+.container{
+    float: left;
+    height: 100%;
+}
+
+.the-chat{
+    float: inline-end;
+    color: #000;
+}
+
+.listGroup{
+    margin-top: 10%;
+    margin-left: 6%;
+}
+
+.inputBox{
+    width: 200%;
+}
+
+.buttons{
+    padding: 2px;;
+    margin: 0;
+    height: 30px;
+    float: right;
+}
+
+.input-group{
+    width: 90%;
+}
+
+.chatDec{
+    display: inline-block;
+}
+
+.flex-column{
+    margin-top: 15%;
+    margin-left: 6%;
+    background-color: gainsboro;
+}
+
+.userAnnounce, .addFriend{
+    display: inline-block;
+}
+
