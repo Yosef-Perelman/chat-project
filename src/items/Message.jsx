@@ -1,8 +1,9 @@
-export default function Message(props){
-    return 
-    (<div>
-        <p>this is a message component</p>
-        <h2>{props.key}</h2>
-        <p>{props.text}</p>
-    </div>)
+import "./message.css"
+function Message({ text }) {
+    return (
+        <div className="message">
+            <p className="messageText">{text}</p>
+        </div>
+    );
 }
+export default Message;
