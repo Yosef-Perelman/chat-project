@@ -4,10 +4,10 @@ import "./Login.css"
 import Conversations from './Conversations';
 import bootstrap from 'bootstrap';
 import { Button, Col, Row, Container } from 'react-bootstrap';
+import User from '../items/User';
 
 const users = [{ username: "Ariel", password: "Mantel" },
 { username: "Yosef", password: "Perelman" }];
-
 
 
 function Login() {
@@ -47,8 +47,6 @@ function Login() {
                 </Button>
             </form>
             <p className='center'> If you are not registered yet, <Link to={'Register'}>Register</Link> </p>
-
-
         </Container >
     );
 }
