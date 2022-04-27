@@ -6,3 +6,8 @@
     width: 90%;
     margin-left: 5%;
 }
+img{
+    width: 200px;
+    height: 200px;
+    border-radius: 25px;
+}
