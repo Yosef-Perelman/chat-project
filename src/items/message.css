@@ -3,11 +3,58 @@
     border-radius: 20px;
     background-color: #1877f2;
     color: white;
-    width: 90%;
-    margin-left: 5%;
+    width: 50%;
 }
+.mine{
+    margin-left: 5%;
+    margin-bottom: 5%;
+}
+.friend{
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 5%;
+    margin-right: 5%;
+}
+.friend-frame{
+    display: block;
+    position: relative;
+}
+
 img{
-    width: 200px;
+    width: 250px;
     height: 200px;
     border-radius: 25px;
+    background-color: #1877f2;
+    object-fit: cover;
+}
+.smallblackarea {
+    bottom: 5px;
+    display: inline-block;
+    margin-right: 0;
+    margin-top: 0;
+    position: absolute;
+    right: 5px;
+    background: rgba(0,0,0,0.5);
+    color: #FFF;
+    font-family: arial;
+    font-size: 10px;
+    font-weight: bold;
+    padding: 5px;
+}
+.smallblackarea-text {
+    display: inline-block;
+    margin-right: 0;
+    margin-top: 0;
+    background: rgba(0,0,0,0.5);
+    color: #FFF;
+    font-family: arial;
+    font-size: 10px;
+    font-weight: bold;
+    padding: 5px;
+}
+
+.imgblock {
+display: block;
+position: relative;
+
 }
