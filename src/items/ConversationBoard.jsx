@@ -10,7 +10,7 @@ function ConvBoard({ name }) {
     const [initMessageList, setMessageList] = useState([])
 
     const messageList = initMessageList.map((now, key) => {
-        return <Message text={now.text} key={key} />
+        return <Message text={now.text} key={key} type={now.type} imgSrc={now.imgSrc} />
     });
 
     let newText = useRef(null);
@@ -23,6 +23,7 @@ function ConvBoard({ name }) {
             }])
             newText.current.value = ""
         }
+        console.log(initMessageList);
     }
 
     const onKeyFunc = function onKeyEnter(e) {
@@ -31,8 +32,19 @@ function ConvBoard({ name }) {
         }
     }
 
-    const sendImage = function sendImage() {
 
+
+    const uploadImage = (e) => {
+        console.log(name);
+        let val = e.target.files[0]
+        let content = URL.createObjectURL(val)
+        setMessageList([...initMessageList, {
+            text: "i am image",
+            key: initMessageList.length,
+            imgSrc: content,
+            type: "image",
+            me_or_friend: "me"
+        }])
     }
 
     return (
@@ -48,13 +60,15 @@ function ConvBoard({ name }) {
                 />
                 <Button variant="outline-secondary">record</Button>
                 <DropdownButton title="upload" variant="outline-secondary">
-                    <label htmlFor="filePicker" style={{ background: "grey", padding: "5px 10px" }}>
-                        Send image
+                    <label for={name}>
+                        upload image
+                        <input type={"file"} id={name} hidden={true}
+                            onChange={(e) => uploadImage(e)} />
                     </label>
-                    <input id="filePicker" style={{ visibility: "hidden" }} type={"file"} onChange={sendImage} />
                 </DropdownButton>
                 <Button variant="outline-secondary" onClick={addMessage}>send</Button>
             </InputGroup>
+
         </Tab.Pane>
     );
 }
