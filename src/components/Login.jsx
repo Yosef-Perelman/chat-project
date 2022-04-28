@@ -1,14 +1,8 @@
-import { Link, useNavigate } from 'react-router-dom';
-import Register from './Register';
 import "./Login.css"
-import Conversations from './Conversations';
-import bootstrap from 'bootstrap';
+import { Link, useNavigate } from 'react-router-dom';
 import { Button, Col, Row, Container } from 'react-bootstrap';
-import User from '../items/User';
 
-const users = [{ username: "Ariel", password: "Mantel" },
-{ username: "Yosef", password: "Perelman" }];
-
+const users = [{ username: "Ariel", password: "Mantel" }, { username: "Yosef", password: "Perelman" }];
 
 function Login() {
     const navigate = useNavigate();
@@ -31,23 +25,32 @@ function Login() {
     }
 
     return (
+        <div class="form-horizontal">
+            <Container class="col">
+                <form>
+                    <Row>
+                        <Col>Username:</Col>
+                        <Col> <input class='inputSqure' placeholder="username" id='username' /> </Col>
+                    </Row>
+                    <Row>
+                        <Col>password:</Col>
+                        <Col> <input class='inputSqure' type='password' placeholder="Password" id='password' /> </Col>
+                    </Row>
+                    <Row>
+                        <Col>
+                        </Col>
+                        <Col>
+                            <Button class='marginFive' onClick={verify}>
+                                Log In!
+                            </Button>
+                        </Col>
+                    </Row>
+                </form>
+                <p className='center'> If you are not registered yet, <Link to={'Register'}>Register</Link> </p>
 
-        <Container>
-            <form>
-                <Row>
-                    <Col>Username:</Col>
-                    <Col> <input placeholder="username" id='username' /> </Col>
-                </Row>
-                <Row>
-                    <Col>password:</Col>
-                    <Col> <input placeholder="Password" id='password' /> </Col>
-                </Row>
-                <Button variant="primary" onClick={verify}>
-                    Log In!
-                </Button>
-            </form>
-            <p className='center'> If you are not registered yet, <Link to={'Register'}>Register</Link> </p>
-        </Container >
+
+            </Container >
+        </div>
     );
 }
 
