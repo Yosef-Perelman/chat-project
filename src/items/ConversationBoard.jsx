@@ -4,13 +4,14 @@ import { useLocation } from 'react-router-dom';
 import Message from './Message';
 import { useRef, useState } from 'react';
 import "./conversationBoard.css"
+import { type } from '@testing-library/user-event/dist/type';
 
 function ConvBoard({ name }) {
 
     const [initMessageList, setMessageList] = useState([])
 
     const messageList = initMessageList.map((now, key) => {
-        return <Message text={now.text} key={key} type={now.type} imgSrc={now.imgSrc} />
+        return <Message text={now.text} key={key} type={now.type} imgSrc={now.imgSrc} me_or_friend={now.me_or_friend} />
     });
 
     let newText = useRef(null);
@@ -19,7 +20,9 @@ function ConvBoard({ name }) {
         if (newText.current.value != "") {
             setMessageList([...initMessageList, {
                 text: newText.current.value,
-                key: initMessageList.length
+                key: initMessageList.length,
+                me_or_friend: "me",
+                type: "text"
             }])
             newText.current.value = ""
         }
@@ -43,7 +46,7 @@ function ConvBoard({ name }) {
             key: initMessageList.length,
             imgSrc: content,
             type: "image",
-            me_or_friend: "me"
+            me_or_friend: "friend"
         }])
     }
 
