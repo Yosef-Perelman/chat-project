@@ -1,8 +1,16 @@
-export default function Message(props){
-    return 
-    (<div>
-        <p>this is a message component</p>
-        <h2>{props.key}</h2>
-        <p>{props.text}</p>
-    </div>)
+import "./message.css"
+function Message({ text, type, imgSrc, me_or_friend }) {
+    if (type == "image") {
+        return (
+            <div className="message">
+                <img src={imgSrc} />
+            </div>
+        );
+    }
+    else return (
+        <div className="message">
+            <p className="messageText">{text}</p>
+        </div>
+    );
 }
+export default Message;
