@@ -6,19 +6,33 @@ import {
   BrowserRouter as Router,
   Route, Routes,
 } from "react-router-dom";
-import { Container } from 'react-bootstrap';
 import { useState } from 'react';
 
 
 function App() {
 
-  const [usersList, setUsersList] = useState([]);
+  var ariel = {
+    username: "Ariel Mantel",
+    password: "1234",
+    nickname: "Ariel",
+    pictureProfile: "src/pictures/frog1.jpg"
+  }
+
+  var yosef = {
+    username: "Yosef Perelman",
+    password: "1234",
+    nickname: "Yosef",
+    pictureProfile: "src/pictures/frog2.jpg"
+  }
+
+  const [usersList, setUsersList] = useState([ariel, yosef]);
   console.log(usersList);
+
   return (
     <Router>
       <Routes>
-        <Route path='/' element={<Login />} />
-        <Route path='/Register' element={<Register changeUsersList={setUsersList}/>} />
+        <Route path='/' element={<Login usersList={usersList} />} />
+        <Route path='/Register' element={<Register changeUsersList={setUsersList} />} />
         <Route path='/Conversations' element={<Conversations />} />
       </Routes>
     </Router>

@@ -46,15 +46,17 @@ function Register({ changeUsersList }) {
                             setLoginDetails({ ...loginDetails, pictureProfile: e.target.value })
                         }} /> </Col>
                     </Row>
-                    <Button variant="primary" onClick={() => {
+                </form>
+                <div class="text-center" style={{"margin": "10px"}}>
+                <Button variant="primary" style={{"margin": "5px", "float": "left"}} onClick={() => {
                         console.log(`new user registered: ${loginDetails.username}`);
                         changeUsersList((usersList) => [...usersList, loginDetails]);
                         navigate('/Conversations', { state: { name: loginDetails.username } })
                     }}>
                         Register!
                     </Button>
-                </form>
-                <p className='center'> If you are already registered , <Link to={'/'}>Login!</Link> </p>
+                <p className='center rounded'> If you are already registered , <Link to={'/'}>Login!</Link> </p>
+                </div>
             </Container>
         </div>
     );
