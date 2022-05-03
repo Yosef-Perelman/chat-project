@@ -1,9 +1,9 @@
 .messageText{
+    display: inline-block;
     padding: 10px;
     border-radius: 20px;
-    background-color: #1877f2;
     color: white;
-    width: 50%;
+    width: 70%;
 }
 .mine{
     margin-left: 5%;
@@ -54,7 +54,19 @@ img{
 }
 
 .imgblock {
-display: block;
+display: inline;
 position: relative;
-
 }
+
+.txtblock{
+    background-color: #1877f2;
+    width: 45%;
+    border-radius: 20px;
+}
+
+.txt-friend-block{
+    background-color: #5a9bef;
+    width: 45%;
+    border-radius: 20px;
+}
+

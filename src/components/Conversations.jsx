@@ -8,6 +8,9 @@ import { useState } from 'react';
 
 
 function Conversations() {
+    // sending this func to ConversationBoard and back to NaviMe with a value
+    const [lastMessage, setLastMessage] = useState(["hi"]);
+
     const location = useLocation();
     const username = location.state.name;
 
@@ -16,10 +19,10 @@ function Conversations() {
 
 
     const listNames = initiNames.map((now, key) => {
-        return <NaviMe name={now.name} key={key} />
+        return <NaviMe name={now.name} key={key} lastMessage={lastMessage} />
     });
     const listBoards = initialNames.map((now, key) => {
-        return <ConvBoard name={now.name} key={key} />
+        return <ConvBoard name={now.name} key={key} setLastMessage={setLastMessage} />
     });
 
 
