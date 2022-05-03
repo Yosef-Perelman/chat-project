@@ -10,6 +10,7 @@ import { useState } from 'react';
 function Conversations() {
     const location = useLocation();
     const username = location.state.name;
+    console.log(username);
 
     const [initialNames, setinitialNames] = useState([{ name: "hem" }, { name: "dad" }, { name: "buddy" }, { name: "worst enemy" }, { name: "best friend" }]);
     const [initiNames, setInitiNames] = useState([{ name: "hem" }, { name: "dad" }, { name: "buddy" }, { name: "worst enemy" }, { name: "best friend" }])
@@ -37,14 +38,26 @@ function Conversations() {
 
     return (
         <>
-
             <Tab.Container id="everything">
                 <Row>
                     <Col sm={3}>
                         <Nav variant="pills" className="flex-column">
                             <Nav.Item className='chatMenu'>
-                                <Nav.Link className='userAnnounce'>{username}'s Chat!</Nav.Link>
-                                <button className='addFriend' onClick={addContact}>Add</button>
+                                <span class="d-block p-2 bg-primary text-white">
+                                    <table>
+                                        <td className='rowspan'>
+                                            <img className='profilePicture' src="frog2.jpg"></img>
+                                        </td>
+                                        <td>
+                                            <tr>
+                                                <b>{username}'s Chat!</b>
+                                            </tr>
+                                            <tr>
+                                                <button className='addFriend' onClick={addContact}>Add contact member</button>
+                                            </tr>
+                                        </td>
+                                    </table>
+                                    </span>
                             </Nav.Item>
                             {listNames}
                         </Nav>
@@ -56,9 +69,6 @@ function Conversations() {
                     </Col>
                 </Row>
             </Tab.Container>
-
-
-
         </>
     );
 }

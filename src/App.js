@@ -12,16 +12,16 @@ import { useState } from 'react';
 function App() {
 
   var ariel = {
-    username: "Ariel Mantel",
+    userName: "Ariel Mantel",
     password: "1234",
-    nickname: "Ariel",
+    nickName: "Ariel",
     pictureProfile: "src/pictures/frog1.jpg"
   }
 
   var yosef = {
-    username: "Yosef Perelman",
+    userName: "Yosef Perelman",
     password: "1234",
-    nickname: "Yosef",
+    nickName: "Yosef",
     pictureProfile: "src/pictures/frog2.jpg"
   }
 

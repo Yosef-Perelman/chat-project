@@ -14,7 +14,7 @@ function Login({ usersList }) {
         var is_true = false;
         var i = 0;
         for (; i < users.length; i++) {
-            if (username === usersList[i].username && password === usersList[i].password) {
+            if (username === usersList[i].userName && password === usersList[i].password) {
                 is_true = true;
                 break;
             }

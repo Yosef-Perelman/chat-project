@@ -6,9 +6,9 @@ import './Register.css'
 function Register({ changeUsersList }) {
 
     const [loginDetails, setLoginDetails] = useState({
-        username: "",
+        userName: "",
         password: "",
-        nickname: "",
+        nickName: "",
         pictureProfile: ""
     });
 
