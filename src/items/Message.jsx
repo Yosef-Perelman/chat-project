@@ -1,13 +1,12 @@
 import "./message.css"
-function Message({ text, type, imgSrc, me_or_friend }) {
-    var time = new Date();
+function Message({ text, type, imgSrc, me_or_friend, thisTime }) {
     //IMAGES!
     if (type == "image" && me_or_friend == "me") {
         return (
             <div className="mine">
                 <div class="imgblock">
                     <img src={imgSrc} />
-                    <div class="smallblackarea">{time.getHours() + ":" + time.getMinutes()}</div>
+                    <div class="smallblackarea">{thisTime}</div>
                 </div>
             </div>
 
@@ -18,7 +17,7 @@ function Message({ text, type, imgSrc, me_or_friend }) {
             <div className="friend">
                 <div class="imgblock">
                     <img src={imgSrc} />
-                    <div className="smallblackarea">{time.getHours() + ":" + time.getMinutes()}</div>
+                    <div className="smallblackarea">{thisTime}</div>
                 </div>
             </div>
         );
@@ -28,9 +27,9 @@ function Message({ text, type, imgSrc, me_or_friend }) {
     else if (type == "text" && me_or_friend == "me") {
         return (
             <div className="mine">
-                <div class="imgblock">
+                <div class="txtblock">
                     <p className="messageText">{text}</p>
-                    <div class="smallblackarea-text">{time.getHours() + ":" + time.getMinutes()}</div>
+                    <div class="smallblackarea-text">{thisTime}</div>
                 </div>
             </div>
         );
@@ -38,7 +37,11 @@ function Message({ text, type, imgSrc, me_or_friend }) {
     else if (type == "text" && me_or_friend == "friend") {
         return (
             <div className="friend">
-                <p className="messageText">{text}</p>
+                <div class="txt-friend-block">
+
+                    <p className="messageText">{text}</p>
+                    <div class="smallblackarea-text">{thisTime}</div>
+                </div>
             </div>
         );
     }
