@@ -4,9 +4,8 @@ import { useLocation } from 'react-router-dom';
 import Message from './Message';
 import { useRef, useState } from 'react';
 import "./conversationBoard.css"
-import { type } from '@testing-library/user-event/dist/type';
 
-function ConvBoard({ name, setLastMessage }) {
+function ConvBoard({ name, setLastMessage, lastMessageList, index }) {
 
     const [initMessageList, setMessageList] = useState([])
 
@@ -19,7 +18,11 @@ function ConvBoard({ name, setLastMessage }) {
 
     const addMessage = () => {
         if (newText.current.value != "") {
-            setLastMessage(name + " " + newText.current.value);
+            let newArr = [...lastMessageList];
+            newArr[index] = newText.current.value
+            console.log(newArr);
+            setLastMessage(newArr);
+
             setMessageList([...initMessageList, {
                 text: newText.current.value,
                 key: initMessageList.length,

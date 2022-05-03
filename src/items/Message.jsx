@@ -4,9 +4,9 @@ function Message({ text, type, imgSrc, me_or_friend, thisTime }) {
     if (type == "image" && me_or_friend == "me") {
         return (
             <div className="mine">
-                <div class="imgblock">
+                <div className="imgblock">
                     <img src={imgSrc} />
-                    <div class="smallblackarea">{thisTime}</div>
+                    <div className="smallblackarea">{thisTime}</div>
                 </div>
             </div>
 
@@ -15,7 +15,7 @@ function Message({ text, type, imgSrc, me_or_friend, thisTime }) {
     else if (type == "image" && me_or_friend == "friend") {
         return (
             <div className="friend">
-                <div class="imgblock">
+                <div className="imgblock">
                     <img src={imgSrc} />
                     <div className="smallblackarea">{thisTime}</div>
                 </div>
@@ -27,9 +27,9 @@ function Message({ text, type, imgSrc, me_or_friend, thisTime }) {
     else if (type == "text" && me_or_friend == "me") {
         return (
             <div className="mine">
-                <div class="txtblock">
+                <div className="txtblock">
                     <p className="messageText">{text}</p>
-                    <div class="smallblackarea-text">{thisTime}</div>
+                    <div className="smallblackarea-text">{thisTime}</div>
                 </div>
             </div>
         );
@@ -37,10 +37,10 @@ function Message({ text, type, imgSrc, me_or_friend, thisTime }) {
     else if (type == "text" && me_or_friend == "friend") {
         return (
             <div className="friend">
-                <div class="txt-friend-block">
+                <div className="txt-friend-block">
 
                     <p className="messageText">{text}</p>
-                    <div class="smallblackarea-text">{thisTime}</div>
+                    <div className="smallblackarea-text">{thisTime}</div>
                 </div>
             </div>
         );

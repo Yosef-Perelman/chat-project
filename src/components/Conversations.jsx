@@ -17,13 +17,13 @@ function Conversations() {
 
     const [initialNames, setinitialNames] = useState([{ name: "hem" }, { name: "dad" }, { name: "buddy" }, { name: "worst enemy" }, { name: "best friend" }]);
     const [initiNames, setInitiNames] = useState([{ name: "hem" }, { name: "dad" }, { name: "buddy" }, { name: "worst enemy" }, { name: "best friend" }])
-
+    const [lastMessageList, setLastMessageList] = useState(["a", "b", "c", "d", "e"]);
 
     const listNames = initiNames.map((now, key) => {
-        return <NaviMe name={now.name} key={key} lastMessage={lastMessage} />
+        return <NaviMe name={now.name} key={key} lastMessage={lastMessageList[key]} />
     });
     const listBoards = initialNames.map((now, key) => {
-        return <ConvBoard name={now.name} key={key} setLastMessage={setLastMessage} />
+        return <ConvBoard name={now.name} key={key} setLastMessage={setLastMessageList} lastMessageList={lastMessageList} index={key} />
     });
 
 
@@ -60,7 +60,7 @@ function Conversations() {
                                             </tr>
                                         </td>
                                     </table>
-                                    </span>
+                                </span>
                             </Nav.Item>
                             {listNames}
                         </Nav>
