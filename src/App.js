@@ -12,21 +12,20 @@ import { useState } from 'react';
 function App() {
 
   var ariel = {
-    userName: "Ariel Mantel",
+    userName: "Ariel",
     password: "1234",
     nickName: "Ariel",
-    pictureProfile: "src/pictures/frog1.jpg"
+    profilePic: "/frog1.jpg"
   }
 
   var yosef = {
-    userName: "Yosef Perelman",
+    userName: "Yosef",
     password: "1234",
     nickName: "Yosef",
-    pictureProfile: "src/pictures/frog2.jpg"
+    profilePic: "/frog2.jpg"
   }
 
   const [usersList, setUsersList] = useState([ariel, yosef]);
-  console.log(usersList);
 
   return (
     <Router>

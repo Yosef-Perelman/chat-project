@@ -20,7 +20,6 @@ function ConvBoard({ name, setLastMessage, lastMessageList, index }) {
         if (newText.current.value != "") {
             let newArr = [...lastMessageList];
             newArr[index] = newText.current.value
-            console.log(newArr);
             setLastMessage(newArr);
 
             setMessageList([...initMessageList, {

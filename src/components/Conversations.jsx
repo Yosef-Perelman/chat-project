@@ -5,19 +5,25 @@ import NaviMe from '../items/NaviMe';
 import ConvBoard from '../items/ConversationBoard';
 import { useLocation } from 'react-router-dom';
 import { useState } from 'react';
+import frog1 from "./frog1.jpg";
+import frog2 from "./frog2.jpg";
 
 
 function Conversations() {
-    // sending this func to ConversationBoard and back to NaviMe with a value
-    const [lastMessage, setLastMessage] = useState(["hi"]);
 
     const location = useLocation();
     const username = location.state.name;
-    console.log(username);
+    let profilePic = location.state.profilePic;
+    if (username == "Ariel") {
+        profilePic = frog1;
+    }
+    if (username == "Yosef") {
+        profilePic = frog2;
+    }
 
     const [initialNames, setinitialNames] = useState([{ name: "hem" }, { name: "dad" }, { name: "buddy" }, { name: "worst enemy" }, { name: "best friend" }]);
     const [initiNames, setInitiNames] = useState([{ name: "hem" }, { name: "dad" }, { name: "buddy" }, { name: "worst enemy" }, { name: "best friend" }])
-    const [lastMessageList, setLastMessageList] = useState(["a", "b", "c", "d", "e"]);
+    const [lastMessageList, setLastMessageList] = useState(["", "", "", "", ""]);
 
     const listNames = initiNames.map((now, key) => {
         return <NaviMe name={now.name} key={key} lastMessage={lastMessageList[key]} />
@@ -37,6 +43,7 @@ function Conversations() {
             name: newContact,
             key: initialNames.length
         }])
+        console.log(profilePic)
     }
 
     return (
@@ -49,7 +56,7 @@ function Conversations() {
                                 <span class="d-block p-2 bg-primary text-white">
                                     <table>
                                         <td className='rowspan'>
-                                            <img className='profilePicture' src="frog2.jpg"></img>
+                                            <img className='profilePicture' src={profilePic}></img>
                                         </td>
                                         <td>
                                             <tr>

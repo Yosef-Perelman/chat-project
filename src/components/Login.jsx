@@ -2,7 +2,6 @@ import "./Login.css"
 import { Link, useNavigate } from 'react-router-dom';
 import { Button, Col, Row, Container } from 'react-bootstrap';
 
-const users = [{ username: "Ariel", password: "Mantel" }, { username: "Yosef", password: "Perelman" }];
 
 function Login({ usersList }) {
     console.log(usersList);
@@ -13,14 +12,14 @@ function Login({ usersList }) {
         var password = document.getElementById('password').value;
         var is_true = false;
         var i = 0;
-        for (; i < users.length; i++) {
+        for (; i < usersList.length; i++) {
             if (username === usersList[i].userName && password === usersList[i].password) {
                 is_true = true;
                 break;
             }
         }
         if (is_true) {
-            navigate('/Conversations', { state: { name: usersList[i].nickName } });
+            navigate('/Conversations', { state: { name: usersList[i].nickName, profilePic: usersList[i].profilePic } });
         }
         else {
             alert("WRONG");
@@ -44,12 +43,12 @@ function Login({ usersList }) {
                         </Col>
                         <Col>
                         </Col>
-                        </Row>
-                        <div class="text-center" style={{"margin": "10px"}}>
-                            <Button class='marginFive' onClick={verify} style={{"margin": "5px", "float": "left"}}>
-                                Log In!
-                            </Button>                   
-                    <p className="center rounded" > If you are not registered yet, <Link to={'Register'}>Register</Link> </p>
+                    </Row>
+                    <div class="text-center" style={{ "margin": "10px" }}>
+                        <Button class='marginFive' onClick={verify} style={{ "margin": "5px", "float": "left" }}>
+                            Log In!
+                        </Button>
+                        <p className="center rounded" > If you are not registered yet, <Link to={'Register'}>Register</Link> </p>
                     </div>
                 </form>
 
