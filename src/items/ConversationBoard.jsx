@@ -4,22 +4,28 @@ import { useLocation } from 'react-router-dom';
 import Message from './Message';
 import { useRef, useState } from 'react';
 import "./conversationBoard.css"
+import { type } from '@testing-library/user-event/dist/type';
 
-function ConvBoard({ name }) {
+function ConvBoard({ name, setLastMessage }) {
 
     const [initMessageList, setMessageList] = useState([])
 
     const messageList = initMessageList.map((now, key) => {
-        return <Message text={now.text} key={key} type={now.type} imgSrc={now.imgSrc} />
+        return <Message text={now.text} key={key} type={now.type} imgSrc={now.imgSrc} me_or_friend={now.me_or_friend} thisTime={now.thisTime} />
     });
 
     let newText = useRef(null);
 
+
     const addMessage = () => {
         if (newText.current.value != "") {
+            setLastMessage(name + " " + newText.current.value);
             setMessageList([...initMessageList, {
                 text: newText.current.value,
-                key: initMessageList.length
+                key: initMessageList.length,
+                me_or_friend: "friend",
+                type: "text",
+                thisTime: new Date().toLocaleTimeString(),
             }])
             newText.current.value = ""
         }
@@ -35,7 +41,7 @@ function ConvBoard({ name }) {
 
 
     const uploadImage = (e) => {
-        console.log(name);
+        setLastMessage(name + " image")
         let val = e.target.files[0]
         let content = URL.createObjectURL(val)
         setMessageList([...initMessageList, {
@@ -43,7 +49,8 @@ function ConvBoard({ name }) {
             key: initMessageList.length,
             imgSrc: content,
             type: "image",
-            me_or_friend: "me"
+            me_or_friend: "me",
+            thisTime: new Date().toLocaleTimeString()
         }])
     }
 
