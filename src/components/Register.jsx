@@ -43,7 +43,7 @@ function Register({ changeUsersList }) {
                     <Row>
                         <Col>picture:</Col>
                         <Col> <input type='file' onChange={(e) => {
-                            setLoginDetails({ ...loginDetails, pictureProfile: e.target.value })
+                            setLoginDetails({ ...loginDetails, pictureProfile: URL.createObjectURL(e.target.value) })
                         }} /> </Col>
                     </Row>
                 </form>
@@ -51,7 +51,7 @@ function Register({ changeUsersList }) {
                 <Button variant="primary" style={{"margin": "5px", "float": "left"}} onClick={() => {
                         console.log(`new user registered: ${loginDetails.username}`);
                         changeUsersList((usersList) => [...usersList, loginDetails]);
-                        navigate('/Conversations', { state: { name: loginDetails.username } })
+                        navigate('/Conversations', { state: { name: loginDetails.username, pic: loginDetails.pictureProfile } })
                     }}>
                         Register!
                     </Button>

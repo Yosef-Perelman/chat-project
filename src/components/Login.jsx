@@ -29,8 +29,8 @@ function Login({ usersList }) {
 
     return (
         <div class="form-horizontal">
-            <Container class="col text-center">
-                <form>
+            <Container class="col text-center all-border">
+                <form style={{"margin": "50px"}}>
                     <Row>
                         <Col>Username:</Col>
                         <Col> <input class='inputSqure' placeholder="username" id='username' /> </Col>
@@ -46,7 +46,7 @@ function Login({ usersList }) {
                         </Col>
                         </Row>
                         <div class="text-center" style={{"margin": "10px"}}>
-                            <Button class='marginFive' onClick={verify} style={{"margin": "5px", "float": "left"}}>
+                            <Button onClick={verify} style={{"margin": "5px", "float": "left"}}>
                                 Log In!
                             </Button>                   
                     <p className="center rounded" > If you are not registered yet, <Link to={'Register'}>Register</Link> </p>

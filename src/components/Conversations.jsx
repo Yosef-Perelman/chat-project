@@ -26,14 +26,16 @@ function Conversations() {
 
     const addContact = () => {
         let newContact = prompt("New contact name:");
-        setinitialNames([...initialNames, {
-            name: newContact,
-            key: initialNames.length
-        }])
-        setInitiNames([...initialNames, {
-            name: newContact,
-            key: initialNames.length
-        }])
+        if (newContact != "" && newContact != null) {
+            setinitialNames([...initialNames, {
+                name: newContact,
+                key: initialNames.length
+            }])
+            setInitiNames([...initialNames, {
+                name: newContact,
+                key: initialNames.length
+            }])
+        }
     }
 
     return (

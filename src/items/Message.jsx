@@ -1,4 +1,4 @@
-import "./message.css"
+import "./Message.css"
 function Message({ text, type, imgSrc, me_or_friend }) {
     if (type == "image") {
         return (
