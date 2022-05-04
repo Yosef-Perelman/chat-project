@@ -7,6 +7,7 @@ import { useLocation } from 'react-router-dom';
 import { useState } from 'react';
 import frog1 from "./frog1.jpg";
 import frog2 from "./frog2.jpg";
+import anon from "./anon.png"
 
 
 function Conversations() {
@@ -19,6 +20,9 @@ function Conversations() {
     }
     if (username == "Yosef") {
         profilePic = frog2;
+    }
+    if (profilePic == "") {
+        profilePic = anon;
     }
 
     const [initialNames, setinitialNames] = useState([{ name: "hem" }, { name: "dad" }, { name: "buddy" }, { name: "worst enemy" }, { name: "best friend" }]);
