@@ -26,12 +26,21 @@ function Register({ changeUsersList }) {
         var userName = document.getElementById('userName').value;
         var nickName = document.getElementById('nickName').value;
 
-        if (pass == passAgain && userName != "") {
+        var shouldContinue = 1;
+
+        if (userName == "") {
+            alert("you have to enter a username");
+        } else if (pass != passAgain) {
+            alert("passwords do not match");
+        } else if (nickName == "") {
+            alert("you have to enter a nickname")
+        } else if (pass == "") {
+            alert("you have to enter a password")
+        } else if (!(/^[A-Za-z0-9]*$/.test(pass))) {
+            alert("password must contain only numbers and letters")
+        } else {
             changeUsersList((usersList) => [...usersList, loginDetails]);
-            navigate('/Conversations', { state: { name: loginDetails.username, profilePic: loginDetails.profilePic } })
-        }
-        else {
-            alert("WRONG");
+            navigate('/Conversations', { state: { name: nickName, profilePic: loginDetails.profilePic } })
         }
     }
 

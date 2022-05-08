@@ -4,11 +4,22 @@ import { useLocation } from 'react-router-dom';
 import Message from './Message';
 import { useRef, useState } from 'react';
 import "./conversationBoard.css"
+import nice from "./nice.png"
 
 function ConvBoard({ name, setLastMessage, lastMessageList, index, setLastTime, lastTimeList }) {
     let name1 = name + "1";
     let name2 = name + "2";
 
+
+    const hardCodedMessages = [{ text: "blah", key: 0, me_or_friend: "friend", type: "text", thisTime: "15:14:13" },
+    { text: "blah blah", key: 0, me_or_friend: "me", type: "text", thisTime: "15:15:15" },
+    { text: "blah", key: 0, me_or_friend: "friend", type: "image", thisTime: "15:14:13", imgSrc: nice },
+    { text: "blah", key: 0, me_or_friend: "me", type: "text", thisTime: "15:14:13" },
+    ]
+
+    const hardCodedMessagesReturn = hardCodedMessages.map((now, key) => {
+        return <Message text={now.text} key={key} type={now.type} imgSrc={now.imgSrc} me_or_friend={now.me_or_friend} thisTime={now.thisTime} />
+    })
 
     const [initMessageList, setMessageList] = useState([])
 
@@ -116,6 +127,7 @@ function ConvBoard({ name, setLastMessage, lastMessageList, index, setLastTime, 
         <Tab.Pane eventKey={name}>
             <Card className='card'>
                 <extraWarper className="extra">
+                    {hardCodedMessagesReturn}
                     {messageList}
                 </extraWarper>
             </Card>
