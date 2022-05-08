@@ -28,12 +28,15 @@ function Conversations() {
     const [initialNames, setinitialNames] = useState([{ name: "hem" }, { name: "dad" }, { name: "buddy" }, { name: "worst enemy" }, { name: "best friend" }]);
     const [initiNames, setInitiNames] = useState([{ name: "hem" }, { name: "dad" }, { name: "buddy" }, { name: "worst enemy" }, { name: "best friend" }])
     const [lastMessageList, setLastMessageList] = useState(["", "", "", "", ""]);
+    const [lastTimeList, setLastTimeList] = useState(["", "", "", "", ""]);
+
 
     const listNames = initiNames.map((now, key) => {
-        return <NaviMe name={now.name} key={key} lastMessage={lastMessageList[key]} />
+        return <NaviMe name={now.name} key={key} lastMessage={lastMessageList[key]} lastTime={lastTimeList[key]} />
     });
     const listBoards = initialNames.map((now, key) => {
-        return <ConvBoard name={now.name} key={key} setLastMessage={setLastMessageList} lastMessageList={lastMessageList} index={key} />
+        return <ConvBoard name={now.name} key={key} setLastMessage={setLastMessageList} lastMessageList={lastMessageList} index={key}
+            setLastTime={setLastTimeList} lastTimeList={lastTimeList} />
     });
 
 

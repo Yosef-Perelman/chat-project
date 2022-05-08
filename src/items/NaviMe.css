@@ -1,0 +1,25 @@
+.friend_pic{
+    margin: 10px;
+    width: 50px;
+    height: 50px;  
+    display: inline-block;
+}
+.inlineClass{
+    display: inline-block;
+    width: 100%;
+}
+.p{
+    margin-left: 70px;
+}
+.sepe{
+    margin-left: 50px;
+    display: inline-block;
+    margin-right: 0;
+    margin-top: 0;
+    background: rgba(0,0,0,0.5);
+    color: #FFF;
+    font-family: arial;
+    font-size: 10px;
+    font-weight: bold;
+    padding: 5px;
+}

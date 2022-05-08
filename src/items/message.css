@@ -28,6 +28,13 @@ img{
     background-color: #1877f2;
     object-fit: cover;
 }
+video{
+    width: 250px;
+    height: 200px;
+    border-radius: 25px;
+    background-color: #1877f2;
+    object-fit: cover;
+}
 .smallblackarea {
     bottom: 5px;
     display: inline-block;
