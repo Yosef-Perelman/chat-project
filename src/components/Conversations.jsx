@@ -42,15 +42,17 @@ function Conversations() {
 
     const addContact = () => {
         let newContact = prompt("New contact name:");
-        setinitialNames([...initialNames, {
-            name: newContact,
-            key: initialNames.length
-        }])
-        setInitiNames([...initialNames, {
-            name: newContact,
-            key: initialNames.length
-        }])
-        console.log(profilePic)
+        if (newContact != "" && newContact != null) {
+            console.log(newContact);
+            setinitialNames([...initialNames, {
+                name: newContact,
+                key: initialNames.length
+            }])
+            setInitiNames([...initialNames, {
+                name: newContact,
+                key: initialNames.length
+            }])
+        }
     }
 
     return (
