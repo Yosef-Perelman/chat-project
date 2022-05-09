@@ -6,10 +6,13 @@
 }
 .inlineClass{
     display: inline-block;
+    max-width:max-content;
     width: 100%;
 }
 .p{
     margin-left: 70px;
+    max-width:max-content;
+
 }
 .sepe{
     margin-left: 50px;

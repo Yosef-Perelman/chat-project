@@ -4,9 +4,8 @@ import h1 from "./h1.jpg"
 
 
 function NaviMe({ name, lastMessage, lastTime }) {
-
     return (
-        <Nav.Item>
+        <Nav.Item className="surr">
             <div className="inlineClass">
                 <Nav.Link className="inlineClass" eventKey={name}>
                     <img className='friend_pic' src={h1}></img>
@@ -16,7 +15,7 @@ function NaviMe({ name, lastMessage, lastTime }) {
                     </div>
                 </Nav.Link>
             </div>
-            <p className="p"> {lastMessage}</p>
+            <p className="p"> {lastMessage.slice(0, 20)}</p>
         </Nav.Item >
     );
 }
