@@ -6,7 +6,6 @@
 }
 .inlineClass{
     display: inline-block;
-    max-width:max-content;
     width: 100%;
 }
 .p{
