@@ -15,7 +15,7 @@ function NaviMe({ name, lastMessage, lastTime }) {
                     </div>
                 </Nav.Link>
             </div>
-            <p className="p"> {lastMessage.slice(0, 20)}</p>
+            <p className="p"> {lastMessage}</p>
         </Nav.Item >
     );
 }
