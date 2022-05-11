@@ -5,7 +5,7 @@ import h1 from "./h1.jpg"
 
 function NaviMe({ name, lastMessage, lastTime }) {
     return (
-        <Nav.Item className="surr">
+        <Nav.Item className="surr" style={{"height": "75px"}}>
             <div className="inlineClass">
                 <Nav.Link className="inlineClass" eventKey={name}>
                     <img className='friend_pic' src={h1}></img>
