@@ -9,6 +9,7 @@ import nice from "./nice.png"
 function ConvBoard({ name, setLastMessage, lastMessageList, index, setLastTime, lastTimeList }) {
     let name1 = name + "1";
     let name2 = name + "2";
+    let name3 = name + "3";
 
 
     const hardCodedMessages = [{ text: "blah", key: 0, me_or_friend: "friend", type: "text", thisTime: "15:14:13" },
@@ -153,6 +154,13 @@ function ConvBoard({ name, setLastMessage, lastMessageList, index, setLastTime, 
                             upload video
                             <input type={"file"} id={name1} hidden={true}
                                 onChange={(e) => uploadVideo(e)} />
+                        </label>
+                    </Button>
+                    <Button>
+                        <label for={name3}>
+                            upload audio
+                            <input type={"file"} id={name3} hidden={true}
+                                onChange={(e) => uploadRecord(e)} />
                         </label>
                     </Button>
                 </DropdownButton>

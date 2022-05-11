@@ -49,22 +49,32 @@ function Message({ text, type, imgSrc, me_or_friend, thisTime }) {
     //VIDEOS!
     else if (type == "video" && me_or_friend == "me") {
         return (
+
             <div className="mine">
-                <video controls><source src={imgSrc} type="video/mp4"></source></video>
+                <div className="imgblock">
+                    <video controls><source src={imgSrc} type="video/mp4"></source></video>
+                    <div className="smallblackarea">{thisTime}</div>
+                </div>
             </div>
         )
     }
     else if (type == "video" && me_or_friend == "friend") {
         return (
             <div className="friend">
-                <video controls><source src={imgSrc} type="video/mp4"></source></video>
+                <div className="imgblock">
+                    <video controls><source src={imgSrc} type="video/mp4"></source></video>
+                    <div className="smallblackarea">{thisTime}</div>
+                </div>
             </div>
         )
     }
     else if (type == "record" && me_or_friend == "me") {
         return (
             <div className="mine">
-                <audio controls><source src={imgSrc} type="audio/mp3"></source></audio>
+                <div className="imgblock">
+                    <audio controls><source src={imgSrc} type="audio/mp3"></source></audio>
+                    <div className="smallblackarea">{thisTime}</div>
+                </div>
             </div>
         )
     }

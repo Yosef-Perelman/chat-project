@@ -28,7 +28,7 @@ function Conversations() {
     const [initialNames, setinitialNames] = useState([{ name: "hem" }, { name: "dad" }, { name: "buddy" }, { name: "worst enemy" }, { name: "best friend" }]);
     const [initiNames, setInitiNames] = useState([{ name: "hem" }, { name: "dad" }, { name: "buddy" }, { name: "worst enemy" }, { name: "best friend" }])
     const [lastMessageList, setLastMessageList] = useState(["", "", "", "", ""]);
-    const [lastTimeList, setLastTimeList] = useState(["", "", "", "", ""]);
+    const [lastTimeList, setLastTimeList] = useState(["15:14:13", "15:14:13", "15:14:13", "15:14:13", "15:14:13"]);
 
 
     const listNames = initiNames.map((now, key) => {
