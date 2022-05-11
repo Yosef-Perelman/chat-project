@@ -137,7 +137,7 @@ function ConvBoard({ name, setLastMessage, lastMessageList, index, setLastTime, 
                     placeholder="your text" onKeyPress={onKeyFunc}
                 />
                 <Button variant="outline-secondary"><label for={name2}>
-                    record
+                    audio
                     <input type={"file"} id={name2} hidden={true}
                         onChange={(e) => uploadRecord(e)} />
                 </label></Button>
@@ -154,13 +154,6 @@ function ConvBoard({ name, setLastMessage, lastMessageList, index, setLastTime, 
                             upload video
                             <input type={"file"} id={name1} hidden={true}
                                 onChange={(e) => uploadVideo(e)} />
-                        </label>
-                    </Button>
-                    <Button>
-                        <label for={name3}>
-                            upload audio
-                            <input type={"file"} id={name3} hidden={true}
-                                onChange={(e) => uploadRecord(e)} />
                         </label>
                     </Button>
                 </DropdownButton>
