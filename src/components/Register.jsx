@@ -74,7 +74,7 @@ function Register({ changeUsersList }) {
                         <Col>picture:</Col>
                         <Col>
 
-                            <label for="uploadImg">
+                            <label for="uploadImg" class="btn btn-outline-secondary" style={{"background-color": "aliceblue"}}>
                                 upload image
                                 <input type={"file"} id="uploadImg" hidden={true}
                                     onChange={(e) => uploadImage(e)} />
