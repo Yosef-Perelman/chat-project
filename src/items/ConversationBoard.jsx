@@ -1,23 +1,25 @@
 import { Button, Card, Tab, InputGroup, FormControl, DropdownButton } from 'react-bootstrap';
 import Message from './Message';
 import { useRef, useState } from 'react';
-import "./conversationBoard.css"
-import nice from "./nice.png"
-import Imp3 from "./I.mp3"
-import kmp4 from "./k.mp4"
+import "./conversationBoard.css";
+import kmp4 from "./k.mp4";
+import symongarfunkel from "./symongarfunkel.jpg";
+import song from "./song.mp3"
+
 
 function ConvBoard({ name, setLastMessage, lastMessageList, index, setLastTime, lastTimeList }) {
     let name1 = name + "1";
     let name2 = name + "2";
 
-
-    const hardCodedMessages = [
-    { text: "blah", key: 0, me_or_friend: "me", type: "image", thisTime: "15:14:13", imgSrc: nice },
-    { text: "blah", key: 0, me_or_friend: "me", type: "record", thisTime: "15:14:13", imgSrc: Imp3 },
-    { text: "blah", key: 0, me_or_friend: "me", type: "video", thisTime: "15:14:13", imgSrc: kmp4 },
-    { text: "hi!", key: 0, me_or_friend: "me", type: "text", thisTime: "15:14:13" },
-
-    ]
+    var hardCodedMessages = [];
+    if(name === "Mom") {
+        hardCodedMessages = [
+        { text: "blah", key: 0, me_or_friend: "me", type: "image", thisTime: "15:01:48", imgSrc: symongarfunkel },
+        { text: "blah", key: 0, me_or_friend: "me", type: "record", thisTime: "15:10:23", imgSrc: song },
+        { text: "blah", key: 0, me_or_friend: "me", type: "video", thisTime: "15:13:16", imgSrc: kmp4 },
+        { text: "Hello darkness", key: 0, me_or_friend: "me", type: "text", thisTime: "15:14:13" },
+        { text: "my old freind", key: 0, me_or_friend: "me", type: "text", thisTime: "15:14:15" }
+    ]}
 
     const hardCodedMessagesReturn = hardCodedMessages.map((now, key) => {
         return <Message text={now.text} key={key} type={now.type} imgSrc={now.imgSrc} me_or_friend={now.me_or_friend} thisTime={now.thisTime} />
@@ -135,22 +137,23 @@ function ConvBoard({ name, setLastMessage, lastMessageList, index, setLastTime, 
                 <FormControl className='inputLine' ref={newText}
                     placeholder="your text" onKeyPress={onKeyFunc}
                 />
-                <Button variant="outline-secondary"><label for={name2}>
-                    audio
-                    <input type={"file"} id={name2} hidden={true}
-                        onChange={(e) => uploadRecord(e)} />
-                </label></Button>
+
                 <DropdownButton title="upload" variant="outline-secondary">
-                    <Button>
+                    <Button style={{"border": "solid", "border-radius": "5px", "border-color": "black"}}><label for={name2}>
+                        audio
+                        <input type={"file"} id={name2} hidden={true}
+                            onChange={(e) => uploadRecord(e)} />
+                    </label></Button>
+                    <Button style={{"border": "solid", "border-radius": "5px", "border-color": "black"}}>
                         <label for={name}>
-                            upload image
+                            image
                             <input type={"file"} id={name} hidden={true}
                                 onChange={(e) => uploadImage(e)} />
                         </label>
                     </Button>
-                    <Button>
+                    <Button style={{"border": "solid", "border-radius": "5px", "border-color": "black"}}>
                         <label for={name1}>
-                            upload video
+                            video
                             <input type={"file"} id={name1} hidden={true}
                                 onChange={(e) => uploadVideo(e)} />
                         </label>

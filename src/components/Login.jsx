@@ -32,10 +32,10 @@ function Login({ usersList }) {
                 <form>
                     <Row>
                         <Col>Username:</Col>
-                        <Col> <input class='inputSqure' placeholder="username" id='username' /> </Col>
+                        <Col> <input class='inputSqure' placeholder="Username" id='username' /> </Col>
                     </Row>
                     <Row>
-                        <Col>password:</Col>
+                        <Col>Password:</Col>
                         <Col> <input class='inputSqure' type='password' placeholder="Password" id='password' /> </Col>
                     </Row>
                     <Row>
@@ -45,7 +45,7 @@ function Login({ usersList }) {
                         </Col>
                     </Row>
                     <div class="text-center" style={{ "margin": "10px" }}>
-                        <Button class='marginFive' onClick={verify} style={{ "margin": "5px", "float": "left" }}>
+                        <Button className="primary" onClick={verify} style={{ "margin": "5px", "float": "left", "width": "100px" }}>
                             Log In!
                         </Button>
                         <p className="center rounded" > If you are not registered yet, <Link to={'Register'}>Register</Link> </p>

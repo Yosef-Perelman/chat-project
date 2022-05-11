@@ -6,7 +6,7 @@ import { useLocation } from 'react-router-dom';
 import { useState } from 'react';
 import frog1 from "./frog1.jpg";
 import frog2 from "./frog2.jpg";
-import anon from "./anon.png"
+import anon from "./anon.png";
 
 
 function Conversations() {
@@ -29,11 +29,11 @@ function Conversations() {
     var lastMessageListArr = [];
     var lastTimeListArr = [];
 
-    if (username === "Ariel" || username === "Yosef") {
+    if (username === "Ariel") {
         initialNamesArr = [{ name: "Mom" }, { name: "Dad" }, { name: "Jo" }, { name: "Ann" }, { name: "Ben" }];
         initiNamesArr = [{ name: "Mom" }, { name: "Dad" }, { name: "Jo" }, { name: "Ann" }, { name: "Ben" }];
-        lastMessageListArr = ["hi!", "", "", "", ""];
-        lastTimeListArr = ["15:14:13", "", "", "", ""];
+        lastMessageListArr = ["my old freind", "", "", "", ""];
+        lastTimeListArr = ["15:14:15", "", "", "", ""];
     }
 
     const [initialNames, setinitialNames] = useState(initialNamesArr);

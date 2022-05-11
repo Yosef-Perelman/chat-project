@@ -8,14 +8,10 @@
 }
 .mine{
     display: flex;
-    margin-left: 5%;
-    margin-bottom: 5%;
 }
 .friend{
     display: flex;
     justify-content: flex-end;
-    margin-bottom: 5%;
-    margin-right: 5%;
 }
 .friend-frame{
     display: block;
@@ -65,6 +61,7 @@ video{
 .imgblock {
 display: inline;
 position: relative;
+margin: 10px;
 }
 
 .txtblock{

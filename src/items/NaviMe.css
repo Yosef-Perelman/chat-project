@@ -14,13 +14,13 @@
 
 }
 .sepe{
-    margin-left: 50px;
+    margin-left: 5px;
     display: inline-block;
     margin-right: 0;
     margin-top: 0;
     color: black;
     font-family: arial;
-    font-size: 10px;
+    font-size: 12px;
     font-weight: bold;
     padding: 5px;
 }

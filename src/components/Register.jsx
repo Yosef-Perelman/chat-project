@@ -59,17 +59,17 @@ function Register({ changeUsersList }) {
                         }} /> </Col>
                     </Row>
                     <Row>
-                        <Col>password:</Col>
+                        <Col>Password:</Col>
                         <Col> <input id="pass" class='inputSqure' type="password" placeholder="Password" onChange={(e) => {
                             setLoginDetails({ ...loginDetails, password: e.target.value })
                         }} /> </Col>
                     </Row>
                     <Row>
                         <Col>Repeat password:</Col>
-                        <Col> <input id="passAgain" class='inputSqure' type='password' placeholder="write password again" /> </Col>
+                        <Col> <input id="passAgain" class='inputSqure' type='password' placeholder="Write password again" /> </Col>
                     </Row>
                     <Row>
-                        <Col>picture:</Col>
+                        <Col>Profile picture:</Col>
                         <Col>
 
                             <label for="uploadImg" class="btn btn-outline-secondary" style={{"background-color": "aliceblue"}}>
@@ -82,7 +82,7 @@ function Register({ changeUsersList }) {
                     </Row>
                 </form>
                 <div class="text-center" style={{ "margin": "10px" }}>
-                    <Button variant="primary" style={{ "margin": "5px", "float": "left" }} onClick={verify}>
+                    <Button variant="primary" style={{ "margin": "5px", "float": "left", "width": "100px" }} onClick={verify}>
                         Register!
                     </Button>
                     <p className='center rounded'> If you are already registered , <Link to={'/'}>Login!</Link> </p>
