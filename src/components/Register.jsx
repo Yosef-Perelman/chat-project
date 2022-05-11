@@ -36,8 +36,8 @@ function Register({ changeUsersList }) {
             alert("you have to enter a nickname")
         } else if (pass == "") {
             alert("you have to enter a password")
-        } else if (!(/^[A-Za-z0-9]*$/.test(pass))) {
-            alert("password must contain only numbers and letters")
+        } else if (!(/^[A-Za-z0-9]*$/.test(pass)) || pass.length < 4) {
+            alert("The password should contain only letters and numbers and be at least 4 characters")
         } else {
             changeUsersList((usersList) => [...usersList, loginDetails]);
             navigate('/Conversations', { state: { name: nickName, profilePic: loginDetails.profilePic } })
