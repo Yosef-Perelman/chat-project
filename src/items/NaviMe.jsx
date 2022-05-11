@@ -12,10 +12,10 @@ function NaviMe({ name, lastMessage, lastTime }) {
                     {name}
                     <div className="sepe">
                         {lastTime}
+                        <span style={{"margin": "2px"}}> {lastMessage}</span>
                     </div>
                 </Nav.Link>
             </div>
-            <p className="p"> {lastMessage}</p>
         </Nav.Item >
     );
 }
