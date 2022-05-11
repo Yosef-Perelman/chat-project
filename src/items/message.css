@@ -4,6 +4,7 @@
     border-radius: 20px;
     color: white;
     width: 70%;
+    margin: 10px;
 }
 .mine{
     display: flex;
@@ -70,10 +71,17 @@ position: relative;
     background-color: #1877f2;
     width: 45%;
     border-radius: 20px;
+    margin: 10px;
 }
 
 .txt-friend-block{
     background-color: #5a9bef;
     width: 45%;
     border-radius: 20px;
+<<<<<<< HEAD
 }
+=======
+    margin: 10px;
+}
+
+>>>>>>> the-two

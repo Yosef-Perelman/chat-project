@@ -49,7 +49,7 @@ function ConvBoard({ name, setLastMessage, lastMessageList, index, setLastTime, 
             setMessageList([...initMessageList, {
                 text: newText.current.value,
                 key: initMessageList.length,
-                me_or_friend: "friend",
+                me_or_friend: "me",
                 type: "text",
                 thisTime: new Date().toLocaleTimeString()
             }])
