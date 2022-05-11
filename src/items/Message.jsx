@@ -1,22 +1,22 @@
 import "./message.css"
 function Message({ text, type, imgSrc, me_or_friend, thisTime }) {
     //IMAGES!
-    if (type == "image" && me_or_friend == "me") {
+    if (type === "image" && me_or_friend === "me") {
         return (
             <div className="mine">
                 <div className="imgblock">
-                    <img src={imgSrc} />
+                    <img src={imgSrc} alt=""/>
                     <div className="smallblackarea">{thisTime}</div>
                 </div>
             </div>
 
         );
     }
-    else if (type == "image" && me_or_friend == "friend") {
+    else if (type === "image" && me_or_friend === "friend") {
         return (
             <div className="friend">
                 <div className="imgblock">
-                    <img src={imgSrc} />
+                    <img src={imgSrc} alt=""/>
                     <div className="smallblackarea">{thisTime}</div>
                 </div>
             </div>
@@ -24,7 +24,7 @@ function Message({ text, type, imgSrc, me_or_friend, thisTime }) {
     }
 
     //MESSAGES!
-    else if (type == "text" && me_or_friend == "me") {
+    else if (type === "text" && me_or_friend === "me") {
         return (
             <div className="mine">
                 <div className="txtblock">
@@ -34,7 +34,7 @@ function Message({ text, type, imgSrc, me_or_friend, thisTime }) {
             </div>
         );
     }
-    else if (type == "text" && me_or_friend == "friend") {
+    else if (type === "text" && me_or_friend === "friend") {
         return (
             <div className="friend">
                 <div className="txt-friend-block">
@@ -47,7 +47,7 @@ function Message({ text, type, imgSrc, me_or_friend, thisTime }) {
     }
 
     //VIDEOS!
-    else if (type == "video" && me_or_friend == "me") {
+    else if (type === "video" && me_or_friend === "me") {
         return (
 
             <div className="mine">
@@ -58,7 +58,7 @@ function Message({ text, type, imgSrc, me_or_friend, thisTime }) {
             </div>
         )
     }
-    else if (type == "video" && me_or_friend == "friend") {
+    else if (type === "video" && me_or_friend === "friend") {
         return (
             <div className="friend">
                 <div className="imgblock">
@@ -68,7 +68,7 @@ function Message({ text, type, imgSrc, me_or_friend, thisTime }) {
             </div>
         )
     }
-    else if (type == "record" && me_or_friend == "me") {
+    else if (type === "record" && me_or_friend === "me") {
         return (
             <div className="mine">
                 <div className="imgblock">
@@ -78,7 +78,7 @@ function Message({ text, type, imgSrc, me_or_friend, thisTime }) {
             </div>
         )
     }
-    else if (type == "record" && me_or_friend == "friend") {
+    else if (type === "record" && me_or_friend === "friend") {
         return (
             <div className="friend">
                 <div className="imgblock">

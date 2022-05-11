@@ -26,15 +26,13 @@ function Register({ changeUsersList }) {
         var userName = document.getElementById('userName').value;
         var nickName = document.getElementById('nickName').value;
 
-        var shouldContinue = 1;
-
-        if (userName == "") {
+        if (userName === "") {
             alert("you have to enter a username");
-        } else if (pass != passAgain) {
+        } else if (pass !== passAgain) {
             alert("passwords do not match");
-        } else if (nickName == "") {
+        } else if (nickName === "") {
             alert("you have to enter a nickname")
-        } else if (pass == "") {
+        } else if (pass === "") {
             alert("you have to enter a password")
         } else if (!(/^[A-Za-z0-9]*$/.test(pass)) || pass.length < 4) {
             alert("The password should contain only letters and numbers and be at least 4 characters")

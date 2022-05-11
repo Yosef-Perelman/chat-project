@@ -1,6 +1,4 @@
-import bootstrap from 'bootstrap';
-import { Button, Col, Row, Form, ListGroup, Card, Tab, InputGroup, FormControl, DropdownButton, Dropdown, Nav } from 'react-bootstrap';
-import { useLocation } from 'react-router-dom';
+import { Button, Card, Tab, InputGroup, FormControl, DropdownButton } from 'react-bootstrap';
 import Message from './Message';
 import { useRef, useState } from 'react';
 import "./conversationBoard.css"
@@ -11,15 +9,13 @@ import kmp4 from "./k.mp4"
 function ConvBoard({ name, setLastMessage, lastMessageList, index, setLastTime, lastTimeList }) {
     let name1 = name + "1";
     let name2 = name + "2";
-    let name3 = name + "3";
 
 
-    const hardCodedMessages = [{ text: "blah", key: 0, me_or_friend: "friend", type: "text", thisTime: "15:14:13" },
-    { text: "blah blah", key: 0, me_or_friend: "me", type: "text", thisTime: "15:15:15" },
-    { text: "blah", key: 0, me_or_friend: "friend", type: "image", thisTime: "15:14:13", imgSrc: nice },
-    { text: "blah", key: 0, me_or_friend: "friend", type: "record", thisTime: "15:14:13", imgSrc: Imp3 },
+    const hardCodedMessages = [
+    { text: "blah", key: 0, me_or_friend: "me", type: "image", thisTime: "15:14:13", imgSrc: nice },
+    { text: "blah", key: 0, me_or_friend: "me", type: "record", thisTime: "15:14:13", imgSrc: Imp3 },
     { text: "blah", key: 0, me_or_friend: "me", type: "video", thisTime: "15:14:13", imgSrc: kmp4 },
-    { text: "b", key: 0, me_or_friend: "me", type: "text", thisTime: "15:14:13" },
+    { text: "hi!", key: 0, me_or_friend: "me", type: "text", thisTime: "15:14:13" },
 
     ]
 
@@ -37,7 +33,7 @@ function ConvBoard({ name, setLastMessage, lastMessageList, index, setLastTime, 
 
 
     const addMessage = () => {
-        if (newText.current.value != "") {
+        if (newText.current.value !== "") {
             let newArr = [...lastMessageList];
             newArr[index] = newText.current.value
             setLastMessage(newArr);
@@ -59,12 +55,10 @@ function ConvBoard({ name, setLastMessage, lastMessageList, index, setLastTime, 
     }
 
     const onKeyFunc = function onKeyEnter(e) {
-        if (e.key === "Enter" && newText.current.value != "") {
+        if (e.key === "Enter" && newText.current.value !== "") {
             { addMessage() };
         }
     }
-
-
 
     const uploadImage = (e) => {
         let newArr = [...lastMessageList];

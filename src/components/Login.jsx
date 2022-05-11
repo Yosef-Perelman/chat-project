@@ -19,7 +19,7 @@ function Login({ usersList }) {
             }
         }
         if (is_true) {
-            navigate('/Conversations', { state: { name: usersList[i].nickName, profilePic: usersList[i].profilePic } });
+            navigate('/Conversations', {state: { name: usersList[i].nickName, profilePic: usersList[i].profilePic, newUser:false } });
         }
         else {
             alert("WRONG");

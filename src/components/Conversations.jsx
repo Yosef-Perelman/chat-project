@@ -1,5 +1,4 @@
-import bootstrap from 'bootstrap';
-import { Button, Col, Row, Form, ListGroup, Card, Tab, InputGroup, FormControl, DropdownButton, Dropdown, Nav } from 'react-bootstrap';
+import {  Col, Row, Tab, Nav } from 'react-bootstrap';
 import "./Conversations.css"
 import NaviMe from '../items/NaviMe';
 import ConvBoard from '../items/ConversationBoard';
@@ -12,29 +11,37 @@ import anon from "./anon.png"
 
 function Conversations() {
 
-    const [initialNames, setinitialNames] = useState([{ name: "hem" }, { name: "dad" }, { name: "buddy" }, { name: "worst enemy" }]);
-    const [initiNames, setInitiNames] = useState([{ name: "hem" }, { name: "dad" }, { name: "buddy" }, { name: "worst enemy" }])
-    const [lastMessageList, setLastMessageList] = useState(["", "", "", "", ""]);
-    const [lastTimeList, setLastTimeList] = useState(["15:14:13", "15:14:13", "15:14:13", "15:14:13"]);
-
     const location = useLocation();
     const username = location.state.name;
     let profilePic = location.state.profilePic;
-    if (username == "Ariel") {
+    if (username === "Ariel") {
         profilePic = frog1;
     }
-    if (username == "Yosef") {
+    if (username === "Yosef") {
         profilePic = frog2;
     }
-    if (profilePic == "") {
+    if (profilePic === "") {
         profilePic = anon;
     }
 
-    const [initialNames, setinitialNames] = useState([{ name: "hem" }, { name: "dad" }, { name: "buddy" }, { name: "worst enemy" }, { name: "best friend" }]);
-    const [initiNames, setInitiNames] = useState([{ name: "hem" }, { name: "dad" }, { name: "buddy" }, { name: "worst enemy" }, { name: "best friend" }])
-    const [lastMessageList, setLastMessageList] = useState(["blah", "", "", "", ""]);
-    const [lastTimeList, setLastTimeList] = useState(["15:14:13", "", "", "", ""]);
+    var initialNamesArr = [];
+    var initiNamesArr = [];
+    var lastMessageListArr = [];
+    var lastTimeListArr = [];
 
+    if (username === "Ariel" || username === "Yosef") {
+        initialNamesArr = [{ name: "Mom" }, { name: "Dad" }, { name: "Jo" }, { name: "Ann" }, { name: "Ben" }];
+        initiNamesArr = [{ name: "Mom" }, { name: "Dad" }, { name: "Jo" }, { name: "Ann" }, { name: "Ben" }];
+        lastMessageListArr = ["hi!", "", "", "", ""];
+        lastTimeListArr = ["15:14:13", "", "", "", ""];
+    }
+
+    const [initialNames, setinitialNames] = useState(initialNamesArr);
+    const [initiNames, setInitiNames] = useState(initiNamesArr);
+    const [lastMessageList, setLastMessageList] = useState(lastMessageListArr);
+    const [lastTimeList, setLastTimeList] = useState(lastTimeListArr);
+
+    console.log(initialNames);
 
     const listNames = initiNames.map((now, key) => {
         return <NaviMe name={now.name} key={key} lastMessage={lastMessageList[key]} lastTime={lastTimeList[key]} />
@@ -47,7 +54,7 @@ function Conversations() {
 
     const addContact = () => {
         let newContact = prompt("New contact name:");
-        if (newContact != "" && newContact != null) {
+        if (newContact !== "" && newContact != null) {
             console.log(newContact);
             setinitialNames([...initialNames, {
                 name: newContact,
@@ -70,7 +77,7 @@ function Conversations() {
                                 <span class="d-block p-2 bg-primary text-white">
                                     <table>
                                         <td className='rowspan'>
-                                            <img className='profilePicture' src={profilePic}></img>
+                                            <img className='profilePicture' src={profilePic} alt=""></img>
                                         </td>
                                         <td>
                                             <tr>
