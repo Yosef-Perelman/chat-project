@@ -78,5 +78,15 @@ function Message({ text, type, imgSrc, me_or_friend, thisTime }) {
             </div>
         )
     }
+    else if (type == "record" && me_or_friend == "friend") {
+        return (
+            <div className="friend">
+                <div className="imgblock">
+                    <audio controls><source src={imgSrc} type="audio/mp3"></source></audio>
+                    <div className="smallblackarea">{thisTime}</div>
+                </div>
+            </div>
+        )
+    }
 }
 export default Message;

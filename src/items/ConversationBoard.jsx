@@ -5,6 +5,8 @@ import Message from './Message';
 import { useRef, useState } from 'react';
 import "./conversationBoard.css"
 import nice from "./nice.png"
+import Imp3 from "./I.mp3"
+import kmp4 from "./k.mp4"
 
 function ConvBoard({ name, setLastMessage, lastMessageList, index, setLastTime, lastTimeList }) {
     let name1 = name + "1";
@@ -15,7 +17,10 @@ function ConvBoard({ name, setLastMessage, lastMessageList, index, setLastTime, 
     const hardCodedMessages = [{ text: "blah", key: 0, me_or_friend: "friend", type: "text", thisTime: "15:14:13" },
     { text: "blah blah", key: 0, me_or_friend: "me", type: "text", thisTime: "15:15:15" },
     { text: "blah", key: 0, me_or_friend: "friend", type: "image", thisTime: "15:14:13", imgSrc: nice },
-    { text: "blah", key: 0, me_or_friend: "me", type: "text", thisTime: "15:14:13" },
+    { text: "blah", key: 0, me_or_friend: "friend", type: "record", thisTime: "15:14:13", imgSrc: Imp3 },
+    { text: "blah", key: 0, me_or_friend: "me", type: "video", thisTime: "15:14:13", imgSrc: kmp4 },
+    { text: "b", key: 0, me_or_friend: "me", type: "text", thisTime: "15:14:13" },
+
     ]
 
     const hardCodedMessagesReturn = hardCodedMessages.map((now, key) => {
