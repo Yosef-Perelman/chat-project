@@ -1,12 +1,4 @@
 import "./message.css"
-<<<<<<< HEAD
-function Message({ text }) {
-    return (
-        <div className="message">
-            <p className="messageText">{text}</p>
-        </div>
-    );
-=======
 function Message({ text, type, imgSrc, me_or_friend, thisTime }) {
     //IMAGES!
     if (type === "image" && me_or_friend === "me") {
@@ -96,6 +88,5 @@ function Message({ text, type, imgSrc, me_or_friend, thisTime }) {
             </div>
         )
     }
->>>>>>> trying-222
 }
 export default Message;

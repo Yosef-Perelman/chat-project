@@ -14,8 +14,6 @@ function Register({ changeUsersList }) {
 
     const navigate = useNavigate();
 
-<<<<<<< HEAD
-=======
     const uploadImage = (e) => {
         let val = e.target.files[0]
         let content = URL.createObjectURL(val)
@@ -95,5 +93,4 @@ function Register({ changeUsersList }) {
     );
 }
 
->>>>>>> trying-222
 export default Register;

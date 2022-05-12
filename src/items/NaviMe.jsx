@@ -1,12 +1,4 @@
 import { Nav } from "react-bootstrap";
-<<<<<<< HEAD
-
-function NaviMe({ name }) {
-    return (
-        <Nav.Item>
-            <Nav.Link eventKey={name}>{name}</Nav.Link>
-        </Nav.Item>
-=======
 import "./NaviMe.css"
 import h1 from "./h1.jpg"
 
@@ -25,7 +17,6 @@ function NaviMe({ name, lastMessage, lastTime }) {
                 </Nav.Link>
             </div>
         </Nav.Item >
->>>>>>> trying-222
     );
 }
 
