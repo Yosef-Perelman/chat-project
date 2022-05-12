@@ -81,7 +81,7 @@ function Conversations() {
                                         </td>
                                         <td>
                                             <tr>
-                                                <b>{username}'s Chat!</b>
+                                                <b>{username}</b>
                                             </tr>
                                             <tr>
                                                 <button className='addFriend' onClick={addContact}>Add contact member</button>

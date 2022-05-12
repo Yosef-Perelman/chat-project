@@ -22,13 +22,14 @@ function Login({ usersList }) {
             navigate('/Conversations', {state: { name: usersList[i].nickName, profilePic: usersList[i].profilePic, newUser:false } });
         }
         else {
-            alert("WRONG");
+            alert("Something went wrong, please try again");
         }
     }
 
     return (
         <div class="form-horizontal">
             <Container class="col text-center">
+                <h1 className="display-1"><strong><em>lets chat!</em></strong></h1>
                 <form>
                     <Row>
                         <Col>Username:</Col>

@@ -9,9 +9,9 @@ function NaviMe({ name, lastMessage, lastTime }) {
             <div className="inlineClass">
                 <Nav.Link className="inlineClass" eventKey={name}>
                     <img className='friend_pic' src={h1} alt=""></img>
-                    {name}
+                    <strong>{name}</strong>
                     <div className="sepe">  
-                    {lastTime}<a>{' >'}</a> 
+                    {lastTime}<strong>{' >'}</strong> 
                         <span style={{"margin": "1px"}}> {lastMessage}</span>
                     </div>
                 </Nav.Link>

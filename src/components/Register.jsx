@@ -45,6 +45,7 @@ function Register({ changeUsersList }) {
     return (
         <div class="form-horizontal">
             <Container class="col">
+            <h1 className="display-1"><strong><em>lets chat!</em></strong></h1>
                 <form>
                     <Row>
                         <Col>Username:</Col>
