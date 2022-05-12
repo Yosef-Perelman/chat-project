@@ -48,7 +48,23 @@
     background-color: gainsboro;
 }
 
-.userAnnounce, .addFriend{
+.userAnnounce{
     display: inline-block;
+}
+
+.addFriend{
+    float: right;
+    margin: 2px;
+    background-color: pink;
+}
+
+.profilePicture{
+    margin: 10px;
+    width: 50px;
+    height: 50px;
+}
+
+img{
+    z-index: -1;
 }
 
