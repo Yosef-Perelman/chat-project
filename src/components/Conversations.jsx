@@ -1,4 +1,4 @@
-import {  Col, Row, Tab, Nav } from 'react-bootstrap';
+import { Col, Row, Tab, Nav } from 'react-bootstrap';
 import "./Conversations.css"
 import NaviMe from '../items/NaviMe';
 import ConvBoard from '../items/ConversationBoard';
@@ -51,11 +51,18 @@ function Conversations() {
             setLastTime={setLastTimeList} lastTimeList={lastTimeList} />
     });
 
+    function addContactToServer(newContact) {
+        fetch('http://localhost:5287/api/contacts/Ariel', {
+            method: 'POST',
+            headers: { 'Content-type': 'application/json' },
+            body: { "id": "moshe", "name": "mosh", "server": "" }
+        })
+    }
 
     const addContact = () => {
         let newContact = prompt("New contact name:");
         if (newContact !== "" && newContact != null) {
-            console.log(newContact);
+            addContactToServer(newContact);
             setinitialNames([...initialNames, {
                 name: newContact,
                 key: initialNames.length
