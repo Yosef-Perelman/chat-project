@@ -11,4 +11,4 @@
 
 השתמשנו גם בreact-router וגם בreact-bootstrap.
 
-אם יש בעיה כלשהי בהרצה מוזמנים לפנות yosefper@gmail.com.
+אם יש בעיה כלשהי בהרצה מוזמנים לפנות yosefper@gmail.com או לarielhy11@gmail.com.
